@@ -90,20 +90,28 @@ python src/predict.py              # forecast the next hour
 
 ## 📊 Results
 
-After training, check:
-- `outputs/training_loss.png` — training vs. validation loss curves
-- `outputs/predictions_vs_actual.png` — predicted vs. actual energy usage
-- `outputs/metrics.json` — RMSE, MAE, R², MAPE on the test set
-
-*(Fill in your actual numbers here after running the pipeline, e.g.)*
-
 | Metric | Value |
 |--------|-------|
-| RMSE   | TBD   |
-| MAE    | TBD   |
-| R²     | TBD   |
-| MAPE   | TBD   |
+| RMSE   | 0.4685 kW |
+| MAE    | 0.3256 kW |
+| R²     | 0.5859 |
+| MAPE   | 40.54% |
 
+**Training loss curve:**
+
+![Training Loss](outputs/training_loss.png)
+
+**Predicted vs. actual energy consumption (test set):**
+
+![Predictions vs Actual](outputs/predictions_vs_actual.png)
+
+**Interpretation:** The model explains ~59% of the variance in hourly energy
+consumption (R² = 0.59), with a typical prediction error of ~0.33 kW (MAE).
+The relatively high MAPE (40.5%) is largely driven by hours with very low
+actual consumption (e.g. overnight), where even small absolute errors
+translate into large percentage errors — a known limitation of MAPE rather
+than a sign the model is unreliable. RMSE and MAE are more representative of
+real-world performance here.
 ## 🔧 Tech Stack
 
 - Python 3.10+
