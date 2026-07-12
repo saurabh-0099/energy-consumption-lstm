@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+
+# Data (large files - see README for download instructions)
+data/household_power_consumption.txt
+data/*.zip
+data/hourly_power_consumption.csv
+
+# Model artifacts (regenerate by running training)
+models/*.keras
+models/*.h5
+models/*.save
+
+# Outputs
+outputs/*.png
+outputs/*.json
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
