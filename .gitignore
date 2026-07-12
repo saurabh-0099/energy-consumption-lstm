@@ -19,7 +19,7 @@ models/*.h5
 models/*.save
 
 # Outputs
-outputs/*.png
+
 outputs/*.json
 
 # IDE
